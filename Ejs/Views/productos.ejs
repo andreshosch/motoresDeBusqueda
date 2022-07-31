@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=".\css\style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <% 
+  if (products) {%>
+        <h2 class="title">LISTA DE PRODUCTOS CON EJS</h2>
+        <br>
+        <table class="table">
+            <thead class="bg-success">
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </thead>
+            <tbody>
+                <% products.forEach(function(producto) { %>
+                    <tr class="background_table">
+                        <td>
+                            <%= producto.title %>
+                        </td>
+                        <td>
+                            <%= producto.price %>
+                        </td>
+                        <td>
+                            <img class="tamaño" src=<%=producto.thumbnail %>>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h2 class="title">NO SE ENCONTRARON LOS PRODUCTOS</h2>
+            <% } %>
+</body>
+<br><br>
+<div class="center_button">
+    <a href="/"><button class="btn_inicio">Volver a Inicio
+  
+     
+</html>
